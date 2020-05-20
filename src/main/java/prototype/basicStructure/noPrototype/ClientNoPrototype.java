@@ -10,6 +10,7 @@ public class ClientNoPrototype {
         System.out.println("Ejemplo1 : 50 ----> " +ejemplo1.getAttributo2());
 
         NoPrototype ejemplo2 = new NoPrototype();
+
         ejemplo2=ejemplo1;
         ejemplo2.setAttributo2(9999);
         ejemplo2.setAttributo1("Ejemplo2");
