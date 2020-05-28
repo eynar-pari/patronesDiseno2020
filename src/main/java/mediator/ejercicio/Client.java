@@ -1,20 +1,54 @@
-package mediator.basic;
+package mediator.ejercicio;
 
 public class Client {
 
 
     public static void main (String [] arg) {
-        ConcreteMediator concreteMediator = new ConcreteMediator();
+        Skype skypeUpbTeam = new Skype();
 
-        ConcreteColleague1 c1 = new ConcreteColleague1(concreteMediator);
-        ConcreteColleague2 c2 = new ConcreteColleague2(concreteMediator);
+        Qa qa1 = new Qa(skypeUpbTeam);
+        qa1.setName("jose");
+        Qa qa2 = new Qa(skypeUpbTeam);
+        qa2.setName("juan");
+        Qa qa3 = new Qa(skypeUpbTeam);
+        qa3.setName("maria");
 
-        concreteMediator.setConcreteColleague1(c1);
-        concreteMediator.setConcreteColleague2(c2);
+        Dev dev1 = new Dev(skypeUpbTeam);
+        dev1.setName("dev1");
+        Dev dev2 = new Dev(skypeUpbTeam);
+        dev2.setName("dev2");
+        Dev dev3 = new Dev(skypeUpbTeam);
+        dev3.setName("dev3");
+        Dev dev4 = new Dev(skypeUpbTeam);
+        dev4.setName("dev4");
+        Dev dev5 = new Dev(skypeUpbTeam);
+        dev5.setName("dev5");
+
+        ScrumMaster sm1= new ScrumMaster(skypeUpbTeam);
+        sm1.setName("upb sm1");
+
+        skypeUpbTeam.addColleague(qa1);
+        skypeUpbTeam.addColleague(qa2);
+        skypeUpbTeam.addColleague(qa3);
+
+        skypeUpbTeam.addColleague(dev1);
+        skypeUpbTeam.addColleague(dev2);
+        skypeUpbTeam.addColleague(dev3);
+        skypeUpbTeam.addColleague(dev4);
+        skypeUpbTeam.addColleague(dev5);
+
+        skypeUpbTeam.addColleague(sm1);
 
 
-        c1.send("este mensaje es para realizar una pregunta, que hora es?");
-        c2.send("respuesta :  la hora es 8:27");
+        qa1.send("hello QA Team");
+        qa3.send("Hi All");
+
+
+        dev1.send("hello DEV Team");
+        dev4.send("hello world");
+
+        sm1.send("Hello ALL !!! Dev and QA, Sprint Start Today");
+
     }
 
 }

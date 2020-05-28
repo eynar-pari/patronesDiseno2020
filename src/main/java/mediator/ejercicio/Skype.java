@@ -1,33 +1,51 @@
-package mediator.basic;
+package mediator.ejercicio;
 
-public class ConcreteMediator implements Mediator {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Skype implements Mediator {
 
-    private  ConcreteColleague1 concreteColleague1;
-    private  ConcreteColleague2 concreteColleague2;
+    private List<Qa> QaList = new ArrayList<>();
+    private List<Dev> DevList= new ArrayList<>();
+    private List<ScrumMaster> ScrumMasterList= new ArrayList<>();
 
     @Override
     public void send(String msg, Colleague colleague) {
-        if (colleague == concreteColleague1)
-            concreteColleague2.messageReceived(msg);
-        else
-            concreteColleague1.messageReceived(msg);
-
+        switch (colleague.role.toUpperCase()){
+            case "QA":
+                System.out.println(" <Chat Msg> ");
+                for (int i = 0; i < QaList.size(); i++) {
+                    if (QaList.get(i).getName() != colleague.getName())
+                        QaList.get(i).messageReceived(msg);
+                }
+                break;
+            case "DEV":
+                System.out.println(" <Chat Msg> ");
+                for (int i = 0; i < DevList.size(); i++) {
+                    if (DevList.get(i).getName() != colleague.getName())
+                        DevList.get(i).messageReceived(msg);
+                }
+                break;
+            case "SM":
+                System.out.println(" <Chat Msg> ");
+                QaList.forEach((specificQA) -> specificQA.messageReceived(msg));
+                DevList.forEach((specificQA) -> specificQA.messageReceived(msg));
+                break;
+        }
     }
 
-    public ConcreteColleague1 getConcreteColleague1() {
-        return concreteColleague1;
-    }
 
-    public void setConcreteColleague1(ConcreteColleague1 concreteColleague1) {
-        this.concreteColleague1 = concreteColleague1;
-    }
-
-    public ConcreteColleague2 getConcreteColleague2() {
-        return concreteColleague2;
-    }
-
-    public void setConcreteColleague2(ConcreteColleague2 concreteColleague2) {
-        this.concreteColleague2 = concreteColleague2;
+    public void addColleague(Colleague colleague) {
+        switch (colleague.role.toUpperCase()){
+            case "QA":
+                QaList.add((Qa) colleague);
+                break;
+            case "DEV":
+                DevList.add((Dev) colleague);
+                break;
+            case "SM":
+                ScrumMasterList.add((ScrumMaster) colleague);
+                break;
+        }
     }
 }

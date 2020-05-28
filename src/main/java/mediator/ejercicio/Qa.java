@@ -1,18 +1,19 @@
-package mediator.basic;
+package mediator.ejercicio;
 
-public class ConcreteColleague1 extends Colleague {
+public class Qa extends Colleague {
 
-    public ConcreteColleague1(Mediator mediator) {
+    public Qa(Mediator mediator) {
         super(mediator);
+        this.role="QA";
     }
 
     @Override
     public void send(String msg) {
-        mediator.send(msg,this);
+        mediator.send("[msg send] "+this.role+" "+this.name+" : "+msg,this);
     }
 
     @Override
     public void messageReceived(String msg) {
-        System.out.println("Concrete Colleague1 > msg received  : "+msg);
+        System.out.println("[msg received] "+this.role+" "+this.name+" < "+msg);
     }
 }

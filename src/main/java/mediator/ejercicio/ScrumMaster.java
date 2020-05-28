@@ -1,18 +1,19 @@
 package mediator.ejercicio;
 
-public class Dev extends Colleague {
+public class ScrumMaster extends Colleague {
 
-    public Dev(Mediator mediator) {
+    public ScrumMaster(Mediator mediator) {
         super(mediator);
+        this.role="SM";
     }
 
     @Override
     public void send(String msg) {
-        mediator.send(msg,this);
+        mediator.send("[msg send] "+this.role+" "+this.name+" : "+msg,this);
     }
 
     @Override
     public void messageReceived(String msg) {
-        System.out.println("Concrete Colleague2 > msg received  : "+msg);
+        System.out.println("[msg received] "+this.role+" "+this.name+" < "+msg);
     }
 }

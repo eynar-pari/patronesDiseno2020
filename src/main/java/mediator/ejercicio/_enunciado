@@ -11,9 +11,3 @@ SM --->   DEV - QA
 QA --->   QA
 DEV --->  DEV
 
-
-
-
-
-
-
