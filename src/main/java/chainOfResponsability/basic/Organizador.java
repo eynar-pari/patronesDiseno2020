@@ -19,6 +19,7 @@ public class Organizador implements IHandler {
         HandlerConcrete2 handlerConcrete2 = new HandlerConcrete2(); //  100- 500
         HandlerConcrete3 handlerConcrete3 = new HandlerConcrete3(); //   500 -1000
 
+        // orden de la cadena responsabilidad
         this.setNext(handlerConcrete1);
         handlerConcrete1.setNext(handlerConcrete2);
         handlerConcrete2.setNext(handlerConcrete3);
