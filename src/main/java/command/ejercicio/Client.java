@@ -21,6 +21,7 @@ public class Client {
         cmd.setCommand(reiniciar);
         cmd.setCommand(suspender);
 
+        cmd.runCommand();
 
     }
 
