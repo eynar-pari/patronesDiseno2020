@@ -1,11 +1,10 @@
-package prototype.ejercicios.ej1;
+package ejercicios2.memento1;
 
 public class Persona {
-    private String nombre;
-    private String ci;
-
-    public Persona (String nombre, String ci){
-        this.nombre= nombre;
+    String nombre;
+    String ci;
+    Persona(String nombre,String ci){
+        this.nombre=nombre;
         this.ci=ci;
     }
 

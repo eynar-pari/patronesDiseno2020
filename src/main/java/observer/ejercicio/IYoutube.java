@@ -1,6 +1,7 @@
-package observer.basic;
+package observer.ejercicio;
 
-public interface ISubject {
+public interface IYoutube {
+
 
     void attach(IObserver observer);
     void deAttach(IObserver observer);

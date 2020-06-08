@@ -1,4 +1,4 @@
-package prototype.basicStructure.ejercicios.ej1;
+package prototype.ejercicios.ej1;
 
 public class Client {
 

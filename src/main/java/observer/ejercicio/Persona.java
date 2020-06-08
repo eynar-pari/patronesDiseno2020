@@ -1,10 +1,10 @@
-package prototype.ejercicios.ej1;
+package observer.ejercicio;
 
 public class Persona {
-    private String nombre;
-    private String ci;
-
-    public Persona (String nombre, String ci){
+    String nombre;
+    String ci;
+    
+    public Persona(String nombre, String ci){
         this.nombre= nombre;
         this.ci=ci;
     }
@@ -17,11 +17,11 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getCi() {
+    public String getci() {
         return ci;
     }
 
-    public void setCi(String ci) {
+    public void setci(String ci) {
         this.ci = ci;
     }
 }
