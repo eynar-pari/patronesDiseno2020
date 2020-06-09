@@ -1,7 +1,5 @@
 package state.ejemplo;
 
-
-
 public class Client {
     public static void main(String [] abc){
 
@@ -18,7 +16,6 @@ public class Client {
 
         computadora.setStateComputadora(himbernacion);
         computadora.request();
-
     }
 
 }
