@@ -1,10 +1,17 @@
 se tiene un visitante que hace el rol de cambiar tipos de monedas de acuerdo al pais que visita en moneda de dolares y vicevesa.
 
-Pais:
 
-Bolivia
+Visitante -----> IVisitor
+
+Cambista -----> ConcreateVisitor
+
+Pais:------IElemento
+
+Bolivia  ----> ElementoContretoA
  - Bolivianos
-Argentina
+
+Argentina  ----> ElementoContretoB
  - Pesos
-Brasil
+
+Brasil   ----> ElementoContretoC
  - Reales
