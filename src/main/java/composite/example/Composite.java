@@ -1,4 +1,4 @@
-package composite.basic;
+package composite.example;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,17 +10,21 @@ import java.util.List;
 public class Composite extends Component {
 
     private List<Component> list = new ArrayList<>();
+    private int totalEstimacion=0;
 
-    public Composite(String attribute) {
-        super(attribute);
+    public Composite(String titulo) {
+        super(titulo);
     }
 
+
     @Override
-    public void operation() {
-        System.out.println(this.getAttribute());
+    public int totalEstimacion() {
+
         for (Component componente:list ) {
-            componente.operation();
+            totalEstimacion=totalEstimacion+componente.totalEstimacion();
         }
+        System.out.println("Componente : ["+getTitulo()+"] Estimacion Total : [" + totalEstimacion+"]");
+        return totalEstimacion;
     }
 
     @Override
@@ -36,6 +40,6 @@ public class Composite extends Component {
 
     @Override
     public void getChild(int position) {
-        System.out.println(list.get(position).getAttribute());
+        System.out.println(list.get(position).getTitulo());
     }
 }
